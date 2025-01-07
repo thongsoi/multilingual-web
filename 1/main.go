@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/thongsoi/multilingual-web/handlers"
+	"github.com/thongsoi/multilingual-web/1/handlers"
 
 	"github.com/gorilla/mux"
 )
@@ -13,8 +13,8 @@ func main() {
 	r := mux.NewRouter()
 
 	// Static file server for assets
-	fs := http.FileServer(http.Dir("./static"))
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
+	fs := http.FileServer(http.Dir("./1/static"))
+	r.PathPrefix("1/static/").Handler(http.StripPrefix("1/static/", fs))
 
 	// Routes
 	r.HandleFunc("/", handlers.HomeHandler)
