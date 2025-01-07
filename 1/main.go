@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"multi-lang-app/handlers"
+	"github.com/thongsoi/multilingual/handlers"
 
 	"github.com/gorilla/mux"
 )
