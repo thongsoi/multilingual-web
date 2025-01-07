@@ -12,9 +12,8 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	// Static file server for assets
-	fs := http.FileServer(http.Dir("./1/static"))
-	r.PathPrefix("1/static/").Handler(http.StripPrefix("1/static/", fs))
+	// Serve static files (if any)
+	r.PathPrefix("/1/static/").Handler(http.StripPrefix("/1/static/", http.FileServer(http.Dir("1/static"))))
 
 	// Routes
 	r.HandleFunc("/", handlers.HomeHandler)
