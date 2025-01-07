@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language App</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <h1>Multi-Language Web Application</h1>
+    <div>
+        <button hx-get="/content?lang=en" hx-target="#content" hx-swap="innerHTML">English</button>
+        <button hx-get="/content?lang=es" hx-target="#content" hx-swap="innerHTML">Español</button>
+        <button hx-get="/content?lang=fr" hx-target="#content" hx-swap="innerHTML">Français</button>
+    </div>
+    <div id="content">
+        <!-- Dynamic content will be loaded here -->
+        <p>Select a language to load content.</p>
+    </div>
+</body>
+</html>
