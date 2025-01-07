@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*.html"))
+var templates = template.Must(template.ParseGlob("1/templates/*.html"))
 
 // HomeHandler renders the main page
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
