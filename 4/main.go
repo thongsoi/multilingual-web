@@ -23,7 +23,7 @@ func main() {
 	r := mux.NewRouter()
 
 	// Serve static files (if any)
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	r.PathPrefix("/4/static/").Handler(http.StripPrefix("/4/static/", http.FileServer(http.Dir("4/static"))))
 
 	// Routes
 	r.HandleFunc("/", homeHandler).Methods("GET")
