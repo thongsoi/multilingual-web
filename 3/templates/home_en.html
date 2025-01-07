@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home (English)</title>
+  <link rel="stylesheet" href="/3/public/styles.css">
+</head>
+<body>
+  <h1>Welcome to the Home Page</h1>
+  <p>This is the English version.</p>
+
+  <script src="https://unpkg.com/htmx.org@1.x/dist/htmx.min.js"></script> 
+  <script>
+    // Example: Fetch and display translations
+    htmx.on('htmx:configRequest', function(event) {
+      event.detail.headers['Accept-Language'] = 'en'; // Set language for requests
+    });
+
+    document.getElementById('get-translations').addEventListener('htmx:configRequest', function(event) {
+      event.detail.headers['Accept-Language'] = 'en'; 
+    });
+  </script>
+</body>
+</html>
