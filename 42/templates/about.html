@@ -28,8 +28,7 @@
 </html>
 
 {{define "content"}}
-<h1>{{.Content.title}}</h1>
-<p>{{.Content.welcome}}</p>
-<p>{{.Content.description}}</p>
-<a href="/about-us?lang={{.Lang}}">About Us</a>
+<h1>{{.Content.aboutTitle}}</h1>
+<p>{{.Content.aboutBody}}</p>
+<a href="/?lang={{.Lang}}">Back to Home</a>
 {{end}}
