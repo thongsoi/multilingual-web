@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	templates = template.Must(template.ParseGlob("4/templates/*.html"))
+	templates = template.Must(template.ParseGlob("41/json/templates/*.html"))
 	locales   = make(map[string]map[string]string)
 )
 
@@ -23,7 +23,7 @@ func main() {
 	r := mux.NewRouter()
 
 	// Serve static files (if any)
-	r.PathPrefix("/4/static/").Handler(http.StripPrefix("/4/static/", http.FileServer(http.Dir("4/static"))))
+	r.PathPrefix("/41/json/static/").Handler(http.StripPrefix("/41/json/static/", http.FileServer(http.Dir("41/json/static"))))
 
 	// Routes
 	r.HandleFunc("/", homeHandler).Methods("GET")
@@ -38,7 +38,7 @@ func main() {
 func loadLocales() {
 	languages := []string{"en", "es", "fr"}
 	for _, lang := range languages {
-		file, err := os.ReadFile("4/locales/" + lang + ".json")
+		file, err := os.ReadFile("41/json/locales/" + lang + ".json")
 		if err != nil {
 			log.Fatalf("Error loading locale file for %s: %v", lang, err)
 		}
