@@ -8,9 +8,6 @@
     <script src="https://unpkg.com/htmx.org"></script>
 </head>
 <body>
-    <h1>{{ .Content.welcome }}</h1>
-    <p>{{ .Content.description }}</p>
-
     <form hx-post="/change-language" hx-target="#content">
         <label for="lang">Select Language:</label>
         <select name="lang" id="lang" onchange="this.form.requestSubmit()">
@@ -19,6 +16,7 @@
             <option value="fr" {{ if eq .Lang "fr" }}selected{{ end }}>Français</option>
         </select>
     </form>
+    
 
     <div id="content">
         <!-- Dynamic content will be replaced here -->
@@ -27,7 +25,9 @@
 </body>
 </html>
 
-{{ define "content" }}
-    <h1>{{ .Content.welcome }}</h1>
-    <p>{{ .Content.description }}</p>
-{{ end }}
+{{define "content"}}
+<h1>{{.Content.title}}</h1>
+<p>{{.Content.welcome}}</p>
+<p>{{.Content.description}}</p>
+<a href="/about-us?lang={{.Lang}}">About Us</a>
+{{end}}
