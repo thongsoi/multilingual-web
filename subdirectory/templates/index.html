@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Website</title>
+    <link rel="stylesheet" href="/subdirectory/static/styles.css">
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <h1>Welcome to the Multilingual Website!</h1>
+    <nav>
+        <a href="/en/">English</a> |
+        <a href="/fr/">French</a> |
+        <a href="/es/">Spanish</a>
+    </nav>
+    <div id="content">
+        <p>This is the default content in English.</p>
+    </div>
+    <button hx-get="/load-content/en" hx-target="#content" hx-swap="innerHTML">
+        Load Dynamic Content
+    </button>
+</body>
+</html>
