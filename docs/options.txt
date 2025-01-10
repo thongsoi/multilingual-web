@@ -1,0 +1,4 @@
+1. subdirectories are the best choice due to their simplicity, SEO benefits, and ease of maintenance (www.example.com/en/).
+2. If you need strong regional targeting and have the resources, consider ccTLDs (wwww.example.th).
+3. Use subdomains only if you have a specific need for separate hosting or regional teams (www.en.example.com).
+4. Avoid URL parameters unless you have no other option (www.example.com?lang=en).
