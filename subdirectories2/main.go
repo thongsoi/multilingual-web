@@ -2,6 +2,7 @@ package main
 
 import (
 	"html/template"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -50,6 +51,6 @@ func main() {
 	r.PathPrefix("/subdirectories2/static/").Handler(http.StripPrefix("/subdirectories2/static/", http.FileServer(http.Dir("subdirectories2/static"))))
 
 	initTemplates()
-
+	log.Println("Server running on http://localhost:8080")
 	http.ListenAndServe(":8080", r)
 }
