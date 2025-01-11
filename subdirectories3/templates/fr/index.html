@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <h1>Bienvenue sur notre site Web!</h1>
+    <p>Ceci est la version française.</p>
+
+    <button 
+        hx-get="/fr/quote" 
+        hx-target="#dynamic-content" 
+        hx-swap="innerHTML">Obtenir une citation motivante</button>
+    
+    <div id="dynamic-content" style="margin-top: 20px; font-style: italic;"></div>
+
+    <p>
+        <a href="/en/">Passer à l'anglais</a> | <a href="/es/">Passer à l'espagnol</a>
+    </p>
+</body>
+</html>
