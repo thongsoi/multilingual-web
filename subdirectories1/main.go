@@ -9,13 +9,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var templates = template.Must(template.ParseGlob("subdirectory/templates/*/*.html"))
+var templates = template.Must(template.ParseGlob("subdirectories1/templates/*/*.html"))
 
 func main() {
 	r := mux.NewRouter()
 
 	// Serve static files
-	r.PathPrefix("/subdirectory/static/").Handler(http.StripPrefix("/subdirectory/static/", http.FileServer(http.Dir("subdirectory/static"))))
+	r.PathPrefix("/subdirectories1/static/").Handler(http.StripPrefix("/subdirectories1/static/", http.FileServer(http.Dir("subdirectory/static"))))
 
 	// Home route with language subdirectory
 	r.HandleFunc("/{lang}/", homeHandler).Methods("GET")

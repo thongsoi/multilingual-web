@@ -86,6 +86,7 @@ func main() {
 	// Dynamic quote endpoint
 	r.HandleFunc("/{lang}/quote", dynamicQuoteHandler).Methods("GET")
 
+	//log and run web server
 	log.Println("Server running on http://localhost:8080")
 	http.ListenAndServe(":8080", r)
 }
